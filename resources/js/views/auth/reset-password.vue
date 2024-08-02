@@ -15,29 +15,14 @@
         </template>
 
         <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Se Connecter
+          Nouveau mot de passe
         </VCardTitle>
       </VCardItem>
 
-      <VCardText class="pt-2">
-        <p class="mb-0 text-center">
-          Connectez-vous à votre compte et commencez l'aventure.
-        </p>
-      </VCardText>
-
-      <VCardText>
-        <VForm @submit.prevent="() => {}">
+      <VCardText style='min-width: 450px'>
+        <VForm @submit.prevent="submitForm">
           <VRow>
             <!-- email -->
-            <VCol cols="12">
-              <VTextField
-                v-model="form.email"
-                label="Adresse mail"
-                type="email"
-              />
-            </VCol>
-
-            <!-- password -->
             <VCol cols="12">
               <VTextField
                 v-model="form.password"
@@ -47,30 +32,27 @@
                 :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
+            </VCol>
 
-              <!-- remember me checkbox -->
-              <div  class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
-                <VCheckbox
-                  v-if='false'
-                  v-model="form.remember"
-                  label="Remember me"
-                />
+            <!-- password -->
+            <VCol cols="12">
+              <VTextField
+                v-model="form.confirm_password"
+                label="Confirmation de mot de passe"
+                placeholder="············"
+                :type="isPasswordVisible ? 'text' : 'password'"
+                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
+                @click:append-inner="isPasswordVisible = !isPasswordVisible"
+              />
 
-                <RouterLink
-                  :to="{ name: 'forgot-password' }"
-                  class="ms-auto mb-1"
-                >
-                  Mot de passe oublié?
-                </RouterLink>
-              </div>
 
               <!-- login button -->
               <VBtn
+                class='mt-5'
                 block
                 type="submit"
-                to="/"
               >
-                Connexion
+                Envoyer
               </VBtn>
             </VCol>
 
@@ -79,10 +61,10 @@
               cols="12"
               class="text-center text-base"
             >
-              <span>Nouveau sur notre plateforme ?</span>
               <RouterLink
+                v-if='false'
                 class="text-primary ms-2"
-                :to="{ name: 'register' }"
+                to="/auth/register"
               >
                 Créer un compte
               </RouterLink>
@@ -125,10 +107,11 @@ import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
 import authV1Tree from '@images/pages/auth-v1-tree.png'
 
+const router = useRouter()
+
 const form = ref({
-  email: '',
   password: '',
-  remember: false,
+  confirm_password: '',
 })
 
 const vuetifyTheme = useTheme()
@@ -138,6 +121,10 @@ const authThemeMask = computed(() => {
 })
 
 const isPasswordVisible = ref(false)
+
+const submitForm = () => {
+  router.push({name: 'login'})
+}
 </script>
 
 <style lang="scss">

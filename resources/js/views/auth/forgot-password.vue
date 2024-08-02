@@ -15,18 +15,19 @@
         </template>
 
         <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Se Connecter
+          Mot de passe oublié ?
         </VCardTitle>
       </VCardItem>
 
-      <VCardText class="pt-2">
+      <VCardText class="pt-2 text-center">
+        <h5></h5>
         <p class="mb-0 text-center">
-          Connectez-vous à votre compte et commencez l'aventure.
+          Entrez votre email pour réinitialiser votre mot de passe
         </p>
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="() => {}">
+        <VForm @submit.prevent="submitForm">
           <VRow>
             <!-- email -->
             <VCol cols="12">
@@ -39,38 +40,12 @@
 
             <!-- password -->
             <VCol cols="12">
-              <VTextField
-                v-model="form.password"
-                label="Mot de passe"
-                placeholder="············"
-                :type="isPasswordVisible ? 'text' : 'password'"
-                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
-                @click:append-inner="isPasswordVisible = !isPasswordVisible"
-              />
-
-              <!-- remember me checkbox -->
-              <div  class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
-                <VCheckbox
-                  v-if='false'
-                  v-model="form.remember"
-                  label="Remember me"
-                />
-
-                <RouterLink
-                  :to="{ name: 'forgot-password' }"
-                  class="ms-auto mb-1"
-                >
-                  Mot de passe oublié?
-                </RouterLink>
-              </div>
-
               <!-- login button -->
               <VBtn
                 block
                 type="submit"
-                to="/"
               >
-                Connexion
+                Continuer
               </VBtn>
             </VCol>
 
@@ -79,12 +54,11 @@
               cols="12"
               class="text-center text-base"
             >
-              <span>Nouveau sur notre plateforme ?</span>
               <RouterLink
                 class="text-primary ms-2"
-                :to="{ name: 'register' }"
+                :to="{name: 'login'}"
               >
-                Créer un compte
+                 Annuler
               </RouterLink>
             </VCol>
 
@@ -124,11 +98,11 @@ import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
 import authV1Tree from '@images/pages/auth-v1-tree.png'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import { config } from '@/plugins/Swal/index.js'
 
 const form = ref({
   email: '',
-  password: '',
-  remember: false,
 })
 
 const vuetifyTheme = useTheme()
@@ -137,7 +111,19 @@ const authThemeMask = computed(() => {
   return vuetifyTheme.global.name.value === 'light' ? authV1MaskLight : authV1MaskDark
 })
 
-const isPasswordVisible = ref(false)
+
+const submitForm = () => {
+  //TODO:: Send Email and show modal
+  Swal.fire({
+    ...config,
+    toast: false,
+    showConfirmButton: true,
+    timer: false,
+    icon: 'success',
+    position: 'center',
+    text: 'Un email vous a été envoyé. Veuillez consulter votre boîte de réception pour réinitialiser votre mot de passe.'
+  });
+}
 </script>
 
 <style lang="scss">
