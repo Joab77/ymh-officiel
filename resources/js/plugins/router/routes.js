@@ -1,5 +1,4 @@
 export const routes = [
-  { path: '/', redirect: '/auth' },
   {
     path: '/auth',
     component: () => import('@/layouts/blank.vue'),
@@ -31,13 +30,15 @@ export const routes = [
         component: () => import('@/views/[...error].vue'),
       },
     ],
+    meta: { layout: 'auth' },
   },
   {
     path: '/',
     component: () => import('@/layouts/default.vue'),
+    meta: { layout: 'front-office' },
     children: [
       {
-        path: 'home',
+        path: '',
         component: () => import('@/views/front-office/home.vue')
       }
     ]
@@ -45,6 +46,7 @@ export const routes = [
   {
     path: '/admin',
     component: () => import('@/layouts/admin.vue'),
+    meta: { layout: 'back-office' },
     children: [
       {
         path: 'dashboard',

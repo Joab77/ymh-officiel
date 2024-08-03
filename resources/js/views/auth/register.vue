@@ -7,23 +7,20 @@
       max-width="448"
     >
       <VCardItem class="justify-center">
-        <template #prepend>
+        <template v-if='false' #prepend>
           <div class="d-flex">
             <div v-html="logo" />
           </div>
         </template>
 
         <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Materio
+          Créer un compte
         </VCardTitle>
       </VCardItem>
 
-      <VCardText class="pt-2">
-        <h5 class="text-h5 font-weight-semibold mb-1">
-          Adventure starts here 🚀
-        </h5>
+      <VCardText class="pt-2 text-center">
         <p class="mb-0">
-          Make your app management easy and fun!
+          Créez votre compte et rejoignez l'aventure dès maintenant!
         </p>
       </VCardText>
 
@@ -34,7 +31,7 @@
             <VCol cols="12">
               <VTextField
                 v-model="form.username"
-                label="Username"
+                label="Nom & Prénoms"
                 placeholder="Johndoe"
               />
             </VCol>
@@ -42,7 +39,7 @@
             <VCol cols="12">
               <VTextField
                 v-model="form.email"
-                label="Email"
+                label="Adresse mail"
                 placeholder="johndoe@email.com"
                 type="email"
               />
@@ -52,28 +49,20 @@
             <VCol cols="12">
               <VTextField
                 v-model="form.password"
-                label="Password"
+                label="Mot de passe"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
-              <div class="d-flex align-center mt-1 mb-4">
-                <VCheckbox
-                  id="privacy-policy"
-                  v-model="form.privacyPolicies"
-                  inline
-                />
-                <VLabel
-                  for="privacy-policy"
-                  style="opacity: 1;"
-                >
-                  <span class="me-1">I agree to</span>
-                  <a
-                    href="javascript:void(0)"
-                    class="text-primary"
-                  >privacy policy & terms</a>
-                </VLabel>
+
+              <div class='my-2 text-center'>
+                <small>
+                  En continuant, vous acceptez les
+                  <a href='#'>conditions d'utilisation et de vente</a>.
+                  Consultez notre <a href='#'> déclaration de confidentialité</a>,
+                  notre <a href='#'>politique relative aux cookies</a>.
+                </small>
               </div>
 
               <VBtn
@@ -81,21 +70,21 @@
                 type="submit"
                 to="/"
               >
-                Sign up
+                Créer un compte
               </VBtn>
             </VCol>
 
             <!-- login instead -->
             <VCol
               cols="12"
-              class="text-center text-base"
+              class="text-center text-caption"
             >
-              <span>Already have an account?</span>
+              <span>Vous possédez déjà un compte ? </span>
               <RouterLink
                 class="text-primary ms-2"
                 to="login"
               >
-                Sign in instead
+                Identifiez-vous
               </RouterLink>
             </VCol>
 

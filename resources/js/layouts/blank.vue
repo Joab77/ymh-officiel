@@ -1,7 +1,9 @@
 <template>
-  <div class="layout-wrapper layout-blank">
-    <RouterView />
-  </div>
+  <VApp>
+    <div class="layout-wrapper layout-blank">
+      <RouterView />
+    </div>
+  </VApp>
 </template>
 
 <style>
@@ -9,3 +11,5 @@
   flex-direction: column;
 }
 </style>
+<script setup>
+</script>

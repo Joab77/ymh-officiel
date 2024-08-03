@@ -14,8 +14,8 @@
           </div>
         </template>
 
-        <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Se Connecter
+        <VCardTitle class="font-weight-semibold text-h3">
+          S'identifier
         </VCardTitle>
       </VCardItem>
 
@@ -70,7 +70,7 @@
                 type="submit"
                 to="/"
               >
-                Connexion
+                S'identifier
               </VBtn>
             </VCol>
 
@@ -84,7 +84,7 @@
                 class="text-primary ms-2"
                 :to="{ name: 'register' }"
               >
-                Créer un compte
+                Créer votre compte
               </RouterLink>
             </VCol>
 
