@@ -1,45 +1,63 @@
 <template>
-  <div v-show='isLoading' class="loading-page-2" :class="{ active: isActive }">
-    <div class="text" :class="{ show: isTextVisible }"> YMH-OFFICIEL </div>
+  <div id="loading-area3" class="loading-page-2">
+    <span class="text">YMH-OFFICIEL</span>
   </div>
-  <RouterView />
+  <div class="page-wraper">
+    <RouterView />
+  </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isLoading: true,
-      isActive: false,
-      isTextVisible: false
-    };
-  },
-  methods: {
-    startAnimation() {
-      this.isActive = true;
-      setTimeout(() => {
-        this.isTextVisible = true;
-      }, 300); // Delay before showing the text animation
-    },
-    stopAnimation() {
-      this.isActive = false;
-      this.isTextVisible = false;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 2000)
-    }
-  },
-  mounted() {
-    this.startAnimation();
-    // Stop the animation after 3 seconds (3000 milliseconds)
-    setTimeout(() => {
-      this.stopAnimation();
-    }, 3000);
+<script setup>
+
+import { ref } from 'vue'
+
+const isVisible = ref(false)
+
+function handleVisibilityChange() {
+  if (!isVisible.value) {
+    setTimeout(function() {
+      document.querySelector('.text').classList.add('show');
+    }, 100);
+    setTimeout(function() {
+      document.getElementById('loading-area3').classList.add('active');
+    }, 1500);
+    setTimeout(function() {
+      document.getElementById('loading-area3').style.display = 'none';
+    }, 2000);
+
+    isVisible.value = true;
   }
-};
+}
+
+window.addEventListener('load', function() {
+  if (document.getElementById('loading-area3')) {
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    if (document.getElementById('loading-area3').style.display === 'block') {
+      handleVisibilityChange();
+    }
+  }
+
+  // document.body.addEventListener('keydown', function() {
+  //   document.body.classList.add('show-focus-outline');
+  // });
+  //
+  // document.body.addEventListener('mousedown', function() {
+  //   document.body.classList.remove('show-focus-outline');
+  // });
+});
+
+onMounted(() => {
+  /* Window Load START */
+  handleVisibilityChange()
+  /* Window Load END */
+})
+
 </script>
 
-<style scoped>
+<style>
+
 .loading-page-2 {
   position: fixed;
   left: 0;
@@ -50,7 +68,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
 }
 
 .loading-page-2 .text {
@@ -82,19 +99,20 @@ export default {
   }
 }
 
-.loading-page-2::after,
-.loading-page-2::before {
+.loading-page-2::after, .loading-page-2::before {
   content: "";
   height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
   top: 0;
+  -webkit-transition: all 0.8s;
+  -ms-transition: all 0.8s;
   transition: all 0.8s;
 }
 
 .loading-page-2::after {
-  background-color: var(--primary, #3498db);
+  background-color: var(--primary);
 }
 
 .loading-page-2::before {
@@ -150,4 +168,6 @@ export default {
     transform: scale(18) translateX(-100%);
   }
 }
+
 </style>
+

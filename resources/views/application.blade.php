@@ -19,26 +19,17 @@
 {{--    <meta name="format-detection" content="telephone=no">--}}
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" />
+
+
+
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1">  <title>YMH-OFFICIEL</title>
-  <link rel="stylesheet" type="text/css" href="{{ asset('loader.css') }}" />
+{{--  <link rel="stylesheet" type="text/css" href="{{ asset('loader.css') }}" />--}}
   @vite(['resources/js/main.js'])
 </head>
 
 <body>
-  <div id="app">
-  </div>
-  
-  <script>
-    // const loaderColor = localStorage.getItem('materio-initial-loader-bg') || '#FFFFFF'
-    // const primaryColor = localStorage.getItem('materio-initial-loader-color') || '#9155FD'
-    //
-    // if (loaderColor)
-    //   document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
-    //
-    // if (primaryColor)
-    //   document.documentElement.style.setProperty('--initial-loader-color', primaryColor)
-  </script>
+  <div id="app"></div>
 </body>
 
 </html>

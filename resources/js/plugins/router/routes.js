@@ -39,8 +39,24 @@ export const routes = [
     children: [
       {
         path: '',
-        component: () => import('@/views/front-office/home.vue')
-      }
+        component: () => import('@/views/front-office/home.vue'),
+        name: 'front-home'
+      },
+      {
+        path: 'item/:id/detail',
+        component: () => import('@/views/front-office/items/detail.vue'),
+        name: 'front-item-detail'
+      },
+      {
+        path: 'about',
+        component: () => import('@/views/front-office/about.vue'),
+        name: 'front-about'
+      },
+      {
+        path: 'contact',
+        component: () => import('@/views/front-office/contact.vue'),
+        name: 'front-contact'
+      },
     ]
   },
   {

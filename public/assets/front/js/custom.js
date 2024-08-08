@@ -178,38 +178,7 @@ var W3music = function(){
 			jQuery('.tabindex').attr("tabindex","0");	
 			function handleMenus(e, menuObj){
 				
-				if(menuObj.parent('li').has('ul').length > 0){e.preventDefault();}					
-					
-					/* if(jQuery('.navbar-nav-scroll').length > 0){						
-						jQuery(document).on("scroll", pageOnScroll);					
-						var headerFullHeight =   parseInt($('.main-bar').css('height'), 10);						
-						
-						jQuery('.navbar-nav-scroll a[href^="#"]').on('click', function (e) {
-							e.preventDefault();
-							jQuery(document).off("scroll");							
-							jQuery('.navbar-nav-scroll a').each(function () {								
-								menuObj.parent('li').removeClass('active');
-							})				
-							menuObj.parent('li').addClass('active');							
-							var target = e.hash,							
-							menu = target;
-							var $target = $(target);							
-							if($target.length > 0){					
-								jQuery('html, body').stop().animate({						
-									'scrollTop': $target.offset().top - headerFullHeight
-								}, 500, 'swing', function () {
-									jQuery(document).on("scroll", pageOnScroll);
-								});
-							}
-						});
-					}		 */
-
-					/* if(menuObj.closest('li').children('ul').length > 0 ){
-						jQuery('.header-nav').removeClass('collapsed').addClass('collapse show');
-					}else{
-						jQuery('.navbar-toggler').removeClass('open').addClass('collapsed');
-						jQuery('.header-nav').removeClass('show');
-					} */
+				if(menuObj.parent('li').has('ul').length > 0){e.preventDefault();}
 				
 				if(menuObj.parent().hasClass('open')){
 					menuObj.parent().removeClass('open');
