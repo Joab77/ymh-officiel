@@ -68,6 +68,7 @@
     </VCard>
 
     <img
+      v-if='false'
       class="auth-footer-start-tree d-none d-md-block"
       :src="authV1Tree"
       :width="250"
@@ -75,6 +76,7 @@
     />
 
     <img
+      v-if='false'
       :src="authV1Tree2"
       class="auth-footer-end-tree d-none d-md-block"
       :width="350"
@@ -92,7 +94,6 @@
 
 <script setup>
 import { useTheme } from 'vuetify'
-import AuthProvider from '@/views/auth/AuthProvider.vue'
 import logo from '@images/logo.svg?raw'
 import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'

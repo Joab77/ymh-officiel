@@ -24,7 +24,6 @@
 
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1">  <title>YMH-OFFICIEL</title>
-{{--  <link rel="stylesheet" type="text/css" href="{{ asset('loader.css') }}" />--}}
   @vite(['resources/js/main.js'])
 </head>
 

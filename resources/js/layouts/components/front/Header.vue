@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header mo-left header header-text-white header-transparent style-1 border-white">
+  <header class="site-header mo-left header header-transparent header-text-white style-1 border-white">
     <!-- Main Header -->
     <div class="sticky-header main-bar-wraper navbar-expand-lg">
       <div class="main-bar clearfix">
@@ -18,7 +18,13 @@
           </div>
 
           <!-- Nav Toggle Button -->
-          <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler collapsed navicon justify-content-end"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
@@ -58,6 +64,9 @@
             <div class="extra-cell">
               <ul class="header-right">
                 <li class="nav-item search-link">
+                  <a class="nav-link" href="/auth/login" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                    <i class="fa-solid fa-user-alt"></i>
+                  </a>
                 </li>
                 <li class="nav-item menu-btn">
                 </li>
@@ -75,6 +84,12 @@
 
 import { onMounted } from 'vue'
 function fixedHeader() {
+  var handleScreenLock = function(){
+    $('.navbar-toggler').on('click',function(){
+      $('body').toggleClass('screen-lock');
+      $('.styleswitcher, .DZ-theme-btn, .demo-btn-bx').toggleClass('	');
+    });
+  }
   window.addEventListener('scroll', function() {
     var menu = document.querySelector('.sticky-header');
     if (menu) {
