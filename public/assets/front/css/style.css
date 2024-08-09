@@ -13039,7 +13039,7 @@ a {
   .mo-left .header-nav {
     overflow-y: scroll;
     position: fixed;
-    width: 100%;
+    width: 70%;
     left: -100%;
     height: 100vh !important;
     transition: all 0.5s;
@@ -13059,7 +13059,7 @@ a {
       -moz-transition: all 0.8s;
       -o-transition: all 0.8s;
       margin: 0;
-      width: 100%; }
+      width: 70%; }
       .mo-left .header-nav.show .logo-dark {
         display: block; }
     .mo-left .header-nav .logo-header {
