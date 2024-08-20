@@ -5,17 +5,17 @@
 	Version			 : 1.0
 	Author Portfolio : https://themeforest.net/user/dexignzone
 	=========================
-	
-	[Table of Contents] 
+
+	[Table of Contents]
 
 	=== SCSS Start ===
-	
+
     1. Abstract
 		1.1 abstract.scss
 		1.2 mixins.scss
 		1.3 skin.scss
 		1.4 variable.scss
-		
+
     2. Base
 		2.1 base.scss
 		2.2 custom-grid.scss
@@ -23,7 +23,7 @@
 		2.4 preloader.scss
 		2.5 reset.scss
 		2.6 shortcode.scss
-		
+
     3. Components
 		3.1 About
 		3.2 Blog Post
@@ -34,14 +34,14 @@
 		3.7 team
 		3.8 testimonials
 		3.9 Other scss File
-		
+
     4. Layout
 		4.1 Banner
 		4.2 Footer
 		4.3 Header
 		4.4 Theme
 		4.5 Other scss File
-		
+
     5. Pages
 		5.1 blog-details.scss
 		5.2 coming-soon.scss
@@ -54,7 +54,7 @@
 		5.9 shop.scss
 		5.10 shop-checkout.scss
 		5.11 under-construction.scss
-	
+
 	=== SCSS Start ===
 */
 /*=== Abstract ===*/
@@ -285,7 +285,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #FF421D;
+  --bs-primary: #e4a579;
   --bs-secondary: #222222;
   --bs-success: #87CE92;
   --bs-info: #00aeff;
@@ -562,7 +562,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  color: rgba(var(--bs-link-color-rgb), 0.5);
   text-decoration: underline; }
   a:hover {
     --bs-link-color-rgb: var(--bs-link-hover-color-rgb); }
@@ -1570,7 +1570,7 @@ progress {
   .gy-xl-5 {
     --bs-gutter-y: 3rem; } }
 
-@media (min-width: 1440) {
+@media (min-width: 1440px) {
   .col-xxl {
     flex: 1 0 0%; }
   .row-cols-xxl-auto > * {
@@ -1721,7 +1721,7 @@ progress {
     vertical-align: bottom; }
 
 .table-group-divider {
-  border-top: calc($table-border-width * 2) solid currentcolor; }
+  border-top: calc(table-border-width * 2) solid currentcolor; }
 
 .caption-top {
   caption-side: top; }
@@ -1945,7 +1945,7 @@ progress {
     background-color: var(--bs-form-control-bg);
     border-color: #ffa18e;
     outline: 0;
-    box-shadow: 0 0 0 0rem rgba(25, 66, 68, 0.25); }
+    box-shadow: 0 0 0 0rem rgba(255, 66, 29, 0.25); }
   .form-control::-webkit-date-and-time-value, .wp-block-categories-dropdown select::-webkit-date-and-time-value,
   .wp-block-archives-dropdown select::-webkit-date-and-time-value {
     height: 1.6em; }
@@ -2000,7 +2000,7 @@ progress {
     padding-left: 0; }
 
 .form-control-sm {
-  min-height: calc(1.6em + 0.5rem + calc($input-border-width * 2));
+  min-height: calc(1.6em + 0.5rem + calc(input-border-width * 2));
   padding: 0.25rem 0.5rem;
   font-size: 0.82031rem;
   border-radius: 0.75rem; }
@@ -2010,7 +2010,7 @@ progress {
     margin-inline-end: 0.5rem; }
 
 .form-control-lg {
-  min-height: calc(1.6em + 1rem + calc($input-border-width * 2));
+  min-height: calc(1.6em + 1rem + calc(input-border-width * 2));
   padding: 0.5rem 1rem;
   font-size: 1.17188rem;
   border-radius: 1rem; }
@@ -2020,17 +2020,17 @@ progress {
     margin-inline-end: 1rem; }
 
 textarea.form-control {
-  min-height: calc(1.6em + 0.75rem + calc($input-border-width * 2)); }
+  min-height: calc(1.6em + 0.75rem + calc(input-border-width * 2)); }
 
 textarea.form-control-sm {
-  min-height: calc(1.6em + 0.5rem + calc($input-border-width * 2)); }
+  min-height: calc(1.6em + 0.5rem + calc(input-border-width * 2)); }
 
 textarea.form-control-lg {
-  min-height: calc(1.6em + 1rem + calc($input-border-width * 2)); }
+  min-height: calc(1.6em + 1rem + calc(input-border-width * 2)); }
 
 .form-control-color {
   width: 3rem;
-  height: calc(1.6em + 0.75rem + calc($input-border-width * 2));
+  height: calc(1.6em + 0.75rem + calc(input-border-width * 2));
   padding: 0.375rem; }
   .form-control-color:not(:disabled):not([readonly]) {
     cursor: pointer; }
@@ -2040,9 +2040,9 @@ textarea.form-control-lg {
   .form-control-color::-webkit-color-swatch {
     border-radius: 0.25rem; }
   .form-control-color.form-control-sm {
-    height: calc(1.6em + 0.5rem + calc($input-border-width * 2)); }
+    height: calc(1.6em + 0.5rem + calc(input-border-width * 2)); }
   .form-control-color.form-control-lg {
-    height: calc(1.6em + 1rem + calc($input-border-width * 2)); }
+    height: calc(1.6em + 1rem + calc(input-border-width * 2)); }
 
 .form-select, select {
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
@@ -2069,7 +2069,7 @@ textarea.form-control-lg {
   .form-select:focus, select:focus {
     border-color: #ffa18e;
     outline: 0;
-    box-shadow: 0 0 0 0rem rgba(25, 66, 68, 0.25); }
+    box-shadow: 0 0 0 0rem rgba(255, 66, 29, 0.25); }
   .form-select[multiple], select[multiple], .form-select[size]:not([size="1"]), select[size]:not([size="1"]) {
     padding-right: 0.75rem;
     background-image: none; }
@@ -2137,7 +2137,7 @@ textarea.form-control-lg {
   .form-check-input:focus {
     border-color: #ffa18e;
     outline: 0;
-    box-shadow: 0 0 0 0rem rgba(25, 66, 68, 0.25); }
+    box-shadow: 0 0 0 0rem rgba(255, 66, 29, 0.25); }
   .form-check-input:checked {
     background-color: #FF421D;
     border-color: #FF421D; }
@@ -2207,9 +2207,9 @@ textarea.form-control-lg {
   .form-range:focus {
     outline: 0; }
     .form-range:focus::-webkit-slider-thumb {
-      box-shadow: 0 0 0 1px #ffffff, 0 0 0 0rem rgba(25, 66, 68, 0.25); }
+      box-shadow: 0 0 0 1px #ffffff, 0 0 0 0rem rgba(255, 66, 29, 0.25); }
     .form-range:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 1px #ffffff, 0 0 0 0rem rgba(25, 66, 68, 0.25); }
+      box-shadow: 0 0 0 1px #ffffff, 0 0 0 0rem rgba(255, 66, 29, 0.25); }
   .form-range::-moz-focus-outer {
     border: 0; }
   .form-range::-webkit-slider-thumb {
@@ -2278,7 +2278,7 @@ textarea.form-control-lg {
   .form-floating > .form-control-plaintext,
   .form-floating > .form-select,
   .form-floating > select {
-    height: calc(3.5rem + calc($input-border-width * 2));
+    height: calc(3.5rem + calc(input-border-width * 2));
     line-height: 1.25; }
   .form-floating > label {
     position: absolute;
@@ -2318,7 +2318,7 @@ textarea.form-control-lg {
     .form-floating > .form-control-plaintext:-webkit-autofill {
       padding-top: 1.625rem;
       padding-bottom: 0.625rem; }
-  
+
   .form-floating > .form-select,
   .form-floating > select {
     padding-top: 1.625rem;
@@ -2431,7 +2431,7 @@ textarea.form-control-lg {
   border-bottom-right-radius: 0; }
 
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-  margin-left: calc($input-border-width * -1);
+  margin-left: calc(input-border-width * -1);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2808,7 +2808,7 @@ textarea.form-control-lg {
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #FF421D;
   --bs-btn-hover-border-color: #FF421D;
-  --bs-btn-focus-shadow-rgb: 25, 66, 68;
+  --bs-btn-focus-shadow-rgb: 255, 66, 29;
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: #FF421D;
   --bs-btn-active-border-color: #FF421D;
@@ -3021,7 +3021,7 @@ textarea.form-control-lg {
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
   --bs-dropdown-border-radius: 0.25rem;
   --bs-dropdown-border-width: var(--bs-border-width);
-  --bs-dropdown-inner-border-radius: calc($dropdown-border-radius - $dropdown-border-width);
+  --bs-dropdown-inner-border-radius: calc(dropdown-border-radius - dropdown-border-width);
   --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
   --bs-dropdown-divider-margin-y: 0.5rem;
   --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
@@ -3308,7 +3308,7 @@ textarea.form-control-lg {
   border-radius: 0.25rem; }
   .btn-group > :not(.btn-check:first-child) + .btn, .btn-group > :not(.btn-check:first-child) + .wp-block-button__link,
   .btn-group > .btn-group:not(:first-child) {
-    margin-left: calc($btn-border-width * -1); }
+    margin-left: calc(btn-border-width * -1); }
   .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .wp-block-button__link:not(:last-child):not(.dropdown-toggle),
   .btn-group > .btn.dropdown-toggle-split:first-child,
   .btn-group > .dropdown-toggle-split.wp-block-button__link:first-child,
@@ -3346,14 +3346,14 @@ textarea.form-control-lg {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  
+
   .btn-group-vertical > .btn,
   .btn-group-vertical > .wp-block-button__link,
   .btn-group-vertical > .btn-group {
     width: 100%; }
   .btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .wp-block-button__link:not(:first-child),
   .btn-group-vertical > .btn-group:not(:first-child) {
-    margin-top: calc($btn-border-width * -1); }
+    margin-top: calc(btn-border-width * -1); }
   .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .wp-block-button__link:not(:last-child):not(.dropdown-toggle),
   .btn-group-vertical > .btn-group:not(:last-child) > .btn,
   .btn-group-vertical > .btn-group:not(:last-child) > .wp-block-button__link {
@@ -3982,7 +3982,7 @@ textarea.form-control-lg {
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2320186f'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-focus-border-color: #ffa18e;
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0rem rgba(25, 66, 68, 0.25);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0rem rgba(255, 66, 29, 0.25);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
   --bs-accordion-active-color: var(--bs-primary-text);
@@ -4122,7 +4122,7 @@ textarea.form-control-lg {
   --bs-pagination-hover-border-color: var(--bs-border-color);
   --bs-pagination-focus-color: var(--bs-link-hover-color);
   --bs-pagination-focus-bg: var(--bs-secondary-bg);
-  --bs-pagination-focus-box-shadow: 0 0 0 0rem rgba(25, 66, 68, 0.25);
+  --bs-pagination-focus-box-shadow: 0 0 0 0rem rgba(255, 66, 29, 0.25);
   --bs-pagination-active-color: #fff;
   --bs-pagination-active-bg: #FF421D;
   --bs-pagination-active-border-color: #FF421D;
@@ -4171,7 +4171,7 @@ textarea.form-control-lg {
     border-color: var(--bs-pagination-disabled-border-color); }
 
 .page-item:not(:first-child) .page-link {
-  margin-left: calc($pagination-border-width * -1); }
+  margin-left: calc(pagination-border-width * -1); }
 
 .page-item:first-child .page-link {
   border-top-left-radius: var(--bs-pagination-border-radius);
@@ -4642,7 +4642,7 @@ textarea.form-control-lg {
   --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
   --bs-btn-close-opacity: 0.5;
   --bs-btn-close-hover-opacity: 0.75;
-  --bs-btn-close-focus-shadow: 0 0 0 0rem rgba(25, 66, 68, 0.25);
+  --bs-btn-close-focus-shadow: 0 0 0 0rem rgba(255, 66, 29, 0.25);
   --bs-btn-close-focus-opacity: 1;
   --bs-btn-close-disabled-opacity: 0.25;
   --bs-btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
@@ -5073,7 +5073,7 @@ textarea.form-control-lg {
   --bs-popover-border-width: var(--bs-border-width);
   --bs-popover-border-color: var(--bs-border-color-translucent);
   --bs-popover-border-radius: var(--bs-border-radius-lg);
-  --bs-popover-inner-border-radius: calc($popover-border-radius - $popover-border-width);
+  --bs-popover-inner-border-radius: calc(popover-border-radius - popover-border-width);
   --bs-popover-box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
   --bs-popover-header-padding-x: 1rem;
   --bs-popover-header-padding-y: 0.5rem;
@@ -5900,7 +5900,7 @@ textarea.form-control-lg {
 
 .text-bg-primary {
   color: #000 !important;
-  background-color: RGBA(25, 66, 68, var(--bs-bg-opacity, 1)) !important; }
+  background-color: RGBA(255, 66, 29, var(--bs-bg-opacity, 1)) !important; }
 
 .text-bg-secondary {
   color: #fff !important;
@@ -9565,7 +9565,7 @@ strong,
   padding-left: 90px;
   padding-right: 90px; }
   @media only screen and (max-width: 1280px) {
-    
+
     .container-fluid,
     .container-sm,
     .container-md,
@@ -9574,7 +9574,7 @@ strong,
       padding-left: 50px;
       padding-right: 50px; } }
   @media only screen and (max-width: 575px) {
-    
+
     .container-fluid,
     .container-sm,
     .container-md,
@@ -12977,7 +12977,7 @@ a {
   .header-transparent.header-text-white .is-fixed .header-nav .nav > li.active > a i,
   .header-transparent.header-text-white .is-fixed .header-nav .nav > li:hover > a i,
   .header-transparent.header-text-white .is-fixed .header-nav .nav > li:hover > a {
-    color: #fff; }
+    color: var(--primary); }
   .header-transparent ul li button i,
   .header-transparent ul li a i {
     color: var(--title) !important; }
@@ -13039,7 +13039,7 @@ a {
   .mo-left .header-nav {
     overflow-y: scroll;
     position: fixed;
-    width: 70%;
+    width: 100%;
     left: -100%;
     height: 100vh !important;
     transition: all 0.5s;
@@ -13059,7 +13059,7 @@ a {
       -moz-transition: all 0.8s;
       -o-transition: all 0.8s;
       margin: 0;
-      width: 70%; }
+      width: 100%; }
       .mo-left .header-nav.show .logo-dark {
         display: block; }
     .mo-left .header-nav .logo-header {
@@ -14224,7 +14224,7 @@ a {
 	left: 0;
 	@include transitionMedium;
 	z-index:9999999;
-	
+
 }
 .contact-sidebar.active + .menu-close-2{
 	width: 100%;
@@ -15276,7 +15276,7 @@ footer {
   border-radius: 5px;
   box-shadow: 0px 36px 48px rgba(31, 66, 135, 0.04);
   background: #fff; }
-  \
+
   .card-header {
     display: flex;
     justify-content: space-between;
@@ -24701,7 +24701,7 @@ ul a.rsswidget {
     -webkit-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s; }
-  
+
   .dz-box-bg .icon-box-btn .btn,
   .dz-box-bg .icon-box-btn .wp-block-button__link {
     background-color: #eeeeee;
@@ -31070,7 +31070,7 @@ pre {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  /* @include custommq($max:420px , $min:340px){ */ }
+  /* @include custommq(max:420px , min:340px){ */ }
   .filter-wrapper .filter-left-area,
   .filter-wrapper .filter-right-area {
     display: flex;

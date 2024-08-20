@@ -44,4 +44,27 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    // Relation avec les rôles
+    public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
+    }
+
+    // Vérifie si l'utilisateur a un rôle spécifique
+    public function hasRole($role)
+    {
+        return $this->roles()->where('name', $role)->exists();
+    }
+
+    // Attribuer un rôle à l'utilisateur
+    public function assignRole($role)
+    {
+        if (is_string($role)) {
+            $role = Role::where('name', $role)->firstOrFail();
+        }
+        $this->roles()->syncWithoutDetaching($role);
+    }
+
 }
